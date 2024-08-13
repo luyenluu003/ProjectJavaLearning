@@ -52,6 +52,7 @@ public class UsersManagementService {
 
     public ReqRes login(ReqRes loginRequest) {
         ReqRes resp = new ReqRes();
+        System.out.println("Login Request: " + loginRequest);
         try{
             authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
@@ -60,6 +61,7 @@ public class UsersManagementService {
             var refreshToken = jwtUtils.generateRefreshToken(new HashMap<>(), user);
             resp.setStatusCode(200);
             resp.setToken(jwt);
+            resp.setRole(user.getRole());
             resp.setRefreshToken(refreshToken);
             resp.setExpirationTime("24Hrs");
             resp.setMessage("Successfully logged in");
