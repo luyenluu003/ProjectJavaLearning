@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dce3b24e-2a4a-4ae0-aa5d-bae485770ffc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../BusDrivermanagement/BusDrivermanagement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BusDrivermanagement/src/BangPhanCong.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BusDrivermanagement/src/LaiXe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BusDrivermanagement/src/Tuyen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BusDrivermanagement/src/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/JDBC_busdrivermanagement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/attribute/AssignmentTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/attribute/Drive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/attribute/Route.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/main/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/service/AssignmentTableService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/service/DriveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/service/RouteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/util/db/AssignmentTableDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/util/db/DriveDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/util/db/RouteDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/util/file/DataReadable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/util/file/DataUpdateable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JDBC_busdrivermanagement/src/util/file/DataWriteable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/Stringhandling.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/src/bai1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/src/bai2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/src/bai3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/src/bai4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/src/bai5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/src/bai6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Stringhandling/src/bai7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/Teachersalarymangement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/src/GiangVien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/src/MonHoc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/src/QuanLyKeKhaiGiangDay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Teachersalarymangement/src/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookborrowingmanagement/bookborrowingmanagement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookborrowingmanagement/src/QLMuonSach.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookborrowingmanagement/src/Sach.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookborrowingmanagement/src/banDoc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookborrowingmanagement/src/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/projectSpringBoot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/config/JWTAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/controller/UserManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/dto/ReqRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/entity/OurUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/reponsitory/UsersRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/service/JWTUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/service/OurUsersDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/service/UsersManagementService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-data-redis-example/.idea/spring-data-redis-example.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-data-redis-example/spring-data-redis-example/src/main/java/com/yui/redis/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-data-redis-example/spring-data-redis-example/src/main/java/com/yui/redis/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-data-redis-example/spring-data-redis-example/src/main/java/com/yui/redis/respository/ProductDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/.idea/springboot-rabbitmq-tutorial.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/consumer/RabbitMQConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/consumer/RabbitMQJsonConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/controller/MessageJsonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/dto/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/publisher/RabbitMQJsonProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-rabbitmq-tutorial/springboot-rabbitmq-tutorial/src/main/java/net/javaguides/springboot/publisher/RabbitMQProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/catalina.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/catalina.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/jaspic-providers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/jaspic-providers.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/logging.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/tomcat-users.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/tomcat-users.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/.smarttomcat/BanHang/conf/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/src/main/java/springmvc/Controllers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/src/main/java/springmvc/SpringConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/src/main/java/springmvc/web.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/src/main/webapp/WEB-INF/views/hello.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/banhang/src/main/webapp/resources/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/src/main/java/springmvc/SpringConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/src/main/java/springmvc/Web.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/src/main/java/springmvc/helloControllers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/src/main/webapp/WEB-INF/views/hello.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/cauhinhjavaconfig/src/main/webapp/resources/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/helloSpring.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/helloSpring/src/main/java/yui/helloSpring/Controller/helloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/helloSpring/src/main/java/yui/helloSpring/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/helloSpring/src/main/resources/static/img/anh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/helloSpring/src/main/resources/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/helloSpring/src/main/resources/templates/hello.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/helloSpring/src/main/resources/templates/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/helloSpring/helloSpring/src/main/webapp/pages/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/javaconfig/src/main/webapp/resouces/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/restapi/.idea/restapi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/restapi/restapi/src/main/java/jmaster/io/restapi/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot/restapi/restapi/src/main/java/jmaster/io/restapi/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../studentGPAmanagement/src/BangDiem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../studentGPAmanagement/src/MonHoc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../studentGPAmanagement/src/SinhVien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../studentGPAmanagement/src/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../studentGPAmanagement/studentGPAmanagement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/.idea/webservicerestfulapi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/consumer/RabbitMQConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/consumer/RabbitMQJsonConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/entity/MongoUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/entity/RedisUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/entity/UserMongodb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/entity/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/exception/CustomServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/publisher/RabbitMQJsonUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/publisher/RabbitMQUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic assignment/src/bai4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Basic assignment/src/bai4.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2kYDe5oWjHjvFDzaMLchJLxkuyA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.projectSpringBoot [clean].executor": "Run",
+    "Maven.projectSpringBoot [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ProjectSpringBootApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HP One/IdeaProjects/webservicerestfulapi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ProjectSpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="projectSpringBoot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yui.projectSpringBoot.ProjectSpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dce3b24e-2a4a-4ae0-aa5d-bae485770ffc" name="Changes" comment="" />
+      <created>1723451709601</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723451709601</updated>
+      <workItem from="1723451711809" duration="6570000" />
+      <workItem from="1723458327228" duration="1933000" />
+      <workItem from="1723477305691" duration="504000" />
+      <workItem from="1723530865273" duration="6029000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
