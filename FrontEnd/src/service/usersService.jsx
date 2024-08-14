@@ -26,10 +26,26 @@ class UsersService {
         }
     }
 
+    static async getYourProfile(token){
+        try{
+            const response = await axios.get(`${UsersService.BASE_URL}/adminuser/get-profile`,{
+                headers:{
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            return response.data
+        }catch(err){
+            throw err
+        }
+    }
+
     static logout(){
         localStorage.removeItem('token')
         localStorage.removeItem('role')
     }
+    
+
+    
     static isAuthenticated(){
         const token = localStorage.getItem('token')
         return !!token

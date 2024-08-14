@@ -2,6 +2,8 @@ import { useState } from "react";
 import PasswordInput from "../components/passwordinput";
 import { Link, useNavigate } from "react-router-dom";
 import { validateEmail } from "../utils/helper";
+import UsersService from "../service/usersService";
+import { toast } from "react-toastify";
 
 const Register = () =>{
     const [name,setName] = useState("")
@@ -11,7 +13,7 @@ const Register = () =>{
     const [role,setRole] = useState("USER")
     const [error,setError] = useState(null)
     const navigate = useNavigate()
-    const handleRegister = (e) =>{
+    const handleRegister = async (e) =>{
         e.preventDefault()
         if(!name){
             setError("Please enter your name.")
@@ -28,6 +30,22 @@ const Register = () =>{
         if(!address){
             setError("Please enter your address.")
             return
+        }
+        const userData = {  
+            name,
+            email,
+            password,
+            address,
+            role
+        }
+        try{
+            const token = localStorage.getItem('token')
+            await UsersService.register(userData,token)
+            toast.success("Account created successfully")
+            navigate('/login')
+        }catch(error){
+            console.log("error register user",error)
+            toast.error("Something went wrong. Please try again.")
         }
         
     }
