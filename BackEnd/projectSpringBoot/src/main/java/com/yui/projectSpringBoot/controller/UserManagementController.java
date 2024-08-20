@@ -2,12 +2,17 @@ package com.yui.projectSpringBoot.controller;
 
 import com.yui.projectSpringBoot.dto.ReqRes;
 import com.yui.projectSpringBoot.entity.OurUsers;
+import com.yui.projectSpringBoot.helper.Helper;
 import com.yui.projectSpringBoot.service.UsersManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -30,17 +35,17 @@ public class UserManagementController {
         return ResponseEntity.ok(usersManagementService.refreshToken(req));
     }
 
-    @GetMapping("/admin/get-all-users")
+    @GetMapping("/get-all-users")
     public ResponseEntity<ReqRes> getAllUsers() {
         return ResponseEntity.ok(usersManagementService.getAllUsers());
     }
 
-    @GetMapping("/admin/get-users/{userId}")
+    @GetMapping("/get-users/{userId}")
     public ResponseEntity<ReqRes> getUser(@PathVariable Integer userId) {
         return ResponseEntity.ok(usersManagementService.getUserById(userId));
     }
 
-    @PutMapping("/admin/update/{userId}")
+    @PutMapping("/adminuser/update/{userId}")
     public ResponseEntity<ReqRes> updateUser(@PathVariable Integer userId, @RequestBody OurUsers reqres) {
         return ResponseEntity.ok(usersManagementService.updateUser(userId,reqres));
     }
@@ -56,5 +61,15 @@ public class UserManagementController {
     @DeleteMapping("/admin/delete/{userId}")
     public ResponseEntity<ReqRes> deleteUser(@PathVariable Integer userId) {
         return ResponseEntity.ok(usersManagementService.deleteUser(userId));
+    }
+
+    @PostMapping("/admin/upload")
+    public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file) {
+        if(Helper.checkExcelFormat(file)){
+            this.usersManagementService.save(file);
+
+            return ResponseEntity.ok(Map.of("Message","File is uploaded and data is saved to db"));
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload excel file");
     }
 }

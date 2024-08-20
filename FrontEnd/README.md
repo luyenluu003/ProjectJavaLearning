@@ -1,8 +1,8 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Dự Án Project java
 
-Currently, two official plugins are available:
+## Giới Thiệu
+Dự án này là một ứng dụng web được xây dựng bằng React và sử dụng Tailwind CSS để thiết kế giao diện. Tailwind CSS cung cấp một hệ thống lớp tiện ích mạnh mẽ để xây dựng giao diện người dùng với thiết kế tùy chỉnh dễ dàng.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+

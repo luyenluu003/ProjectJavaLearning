@@ -24,6 +24,7 @@
       <change afterPath="$PROJECT_DIR$/../../JDBC_busdrivermanagement/src/util/file/DataReadable.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../JDBC_busdrivermanagement/src/util/file/DataUpdateable.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../JDBC_busdrivermanagement/src/util/file/DataWriteable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/helper/Helper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Stringhandling/Stringhandling.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Stringhandling/src/bai1.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Stringhandling/src/bai2.java" afterDir="false" />
@@ -138,6 +139,18 @@
       <change afterPath="$PROJECT_DIR$/../../webservicerestfulapi/webservicerestfulapi/src/main/java/com/example/webservicerestfulapi/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Basic assignment/src/bai4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Basic assignment/src/bai4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectSpringBoot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/config/JWTAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/config/JWTAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/controller/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/controller/UserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/service/UsersManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/service/UsersManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/auth/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/auth/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/components/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/pages/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/pages/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/service/usersService.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/service/usersService.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +232,14 @@
       <workItem from="1723477305691" duration="504000" />
       <workItem from="1723530865273" duration="6029000" />
       <workItem from="1723537018166" duration="6822000" />
-      <workItem from="1723617295915" duration="3542000" />
+      <workItem from="1723617295915" duration="5844000" />
+      <workItem from="1723703999068" duration="10915000" />
+      <workItem from="1723970938947" duration="1337000" />
+      <workItem from="1723990271290" duration="1284000" />
+      <workItem from="1724027371908" duration="442000" />
+      <workItem from="1724049498107" duration="12894000" />
+      <workItem from="1724118320517" duration="4782000" />
+      <workItem from="1724124093694" duration="673000" />
     </task>
     <servers />
   </component>

@@ -2,12 +2,14 @@ package com.yui.projectSpringBoot.service;
 
 import com.yui.projectSpringBoot.dto.ReqRes;
 import com.yui.projectSpringBoot.entity.OurUsers;
+import com.yui.projectSpringBoot.helper.Helper;
 import com.yui.projectSpringBoot.reponsitory.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +29,18 @@ public class UsersManagementService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    public void save(MultipartFile file) {
+        try {
+            List<OurUsers> newUsers = Helper.convertExceltoListOfOurUsers(file.getInputStream(),passwordEncoder);
+            List<OurUsers> existingUsers = usersRepo.findAll();
+            existingUsers.addAll(newUsers);
+            usersRepo.saveAll(existingUsers);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public ReqRes register(ReqRes registrationRequest) {
         ReqRes resp = new ReqRes();
@@ -49,6 +63,7 @@ public class UsersManagementService {
         }
         return resp;
     }
+
 
     public ReqRes login(ReqRes loginRequest) {
         ReqRes resp = new ReqRes();
@@ -100,6 +115,8 @@ public class UsersManagementService {
             List<OurUsers> result = usersRepo.findAll();
             if(!result.isEmpty()){
                 reqRes.setOurUsersList(result);
+                System.out.println("Fetched users: " + result);
+
                 reqRes.setStatusCode(200);
                 reqRes.setMessage("Successfully retrieved all users");
             }else{

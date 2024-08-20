@@ -1,6 +1,7 @@
 package com.yui.projectSpringBoot.config;
 
 import com.yui.projectSpringBoot.service.JWTUtils;
+import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,32 +25,37 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 
     @Autowired
     private OurUsersDetailsService ourUsersDetailsService;
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");
-        final String jwtToken;
-        final String userEmail;
 
-        if (authHeader == null || authHeader.isBlank()) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
         }
 
+        final String jwtToken = authHeader.substring(7);
 
-        jwtToken = authHeader.substring(7);
-        userEmail = jwtUtils.extractUsername(jwtToken);
-        if(userEmail != null && SecurityContextHolder.getContext().getAuthentication()==null) {
-            UserDetails userDetails = ourUsersDetailsService.loadUserByUsername(userEmail);
+        try {
+            final String userEmail = jwtUtils.extractUsername(jwtToken);
 
-            if(jwtUtils.isTokenValid(jwtToken,userDetails)) {
-                SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
-                UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                securityContext.setAuthentication(token);
-                SecurityContextHolder.setContext(securityContext);
+            if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                UserDetails userDetails = ourUsersDetailsService.loadUserByUsername(userEmail);
+
+                if (jwtUtils.isTokenValid(jwtToken, userDetails)) {
+                    UsernamePasswordAuthenticationToken authToken =
+                            new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                    authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                }
             }
+        } catch (MalformedJwtException e) {
+            // Xử lý lỗi khi JWT không hợp lệ
+            System.out.println("Invalid JWT Token: " + e.getMessage());
         }
-        filterChain.doFilter(request,response);
+
+        filterChain.doFilter(request, response);
     }
+
 }

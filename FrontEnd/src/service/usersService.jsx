@@ -39,6 +39,74 @@ class UsersService {
         }
     }
 
+    static async getUserId (token,id) {
+        try {
+            const response = await axios.get(`${UsersService.BASE_URL}/get-users/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            return response.data;
+        } catch (err) {
+            throw err;
+        }
+    }
+
+    static async getAllUsers(token){
+        try{
+            const response = await axios.get(`${UsersService.BASE_URL}/get-all-users`,{
+                headers:{
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            console.log("response",response.data)
+            return response.data
+        }catch(err){
+            throw err
+        }
+    }
+
+    static async updateUser(userId, userData,token) {
+        try {
+            const response = await axios.put(`${UsersService.BASE_URL}/adminuser/update/${userId}`, userData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            return response.data;
+        } catch (err) {
+            throw err;
+        }
+    }
+      
+    
+    static async deleteUser(userId, token) {
+        try {
+            const response = await axios.delete(`${UsersService.BASE_URL}/admin/delete/${userId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            return response.data;
+        } catch (err) {
+            throw err;
+        }
+    }
+
+    static async importFileExcel(file, token) {
+        
+        try{
+            const response = await axios.post(`${UsersService.BASE_URL}/admin/upload`, file, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            return response.data;
+        }catch(err){
+            throw err   
+        }
+    }
+
     static logout(){
         localStorage.removeItem('token')
         localStorage.removeItem('role')
