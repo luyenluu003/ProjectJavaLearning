@@ -115,12 +115,12 @@ public class Helper {
 
             // Tạo tiêu đề cột
             Row header = sheet.createRow(0);
-            header.createCell(0).setCellValue("ID");
-            header.createCell(1).setCellValue("Name");
-            header.createCell(2).setCellValue("Email");
-            header.createCell(3).setCellValue("Password");
-            header.createCell(4).setCellValue("Address");
-            header.createCell(5).setCellValue("Role");
+            header.createCell(0).setCellValue("id");
+            header.createCell(1).setCellValue("name");
+            header.createCell(2).setCellValue("email");
+            header.createCell(3).setCellValue("password");
+            header.createCell(4).setCellValue("address");
+            header.createCell(5).setCellValue("role");
 
             // Thêm dữ liệu người dùng
             int rowNum = 1;

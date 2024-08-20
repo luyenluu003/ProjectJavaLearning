@@ -116,7 +116,6 @@ public class UsersManagementService {
             if(!result.isEmpty()){
                 reqRes.setOurUsersList(result);
                 System.out.println("Fetched users: " + result);
-
                 reqRes.setStatusCode(200);
                 reqRes.setMessage("Successfully retrieved all users");
             }else{

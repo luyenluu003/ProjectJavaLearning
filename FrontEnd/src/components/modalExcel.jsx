@@ -33,18 +33,21 @@ const ModalExcel = ({ openExcelModal, setOpenExcelModal, onUpdateSuccess }) => {
             toast.error('Error importing file');
         }
     };
-
     const handleExportFileExcel = async () => {
-        // Implement export functionality here
-        // Example:
-        // try {
-        //     const token = localStorage.getItem('token');
-        //     const response = await UsersService.exportFileExcel(token);
-        //     // Handle the export response (e.g., download the file)
-        //     toast.success('File exported successfully');
-        // } catch (err) {
-        //     toast.error('Error exporting file');
-        // }
+        try {
+            const token = localStorage.getItem('token');
+            const fileBlob = await UsersService.exportFileExcel(token);
+            const url = window.URL.createObjectURL(new Blob([fileBlob]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'users.xlsx');
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            toast.success('File exported successfully');
+        } catch (err) {
+            toast.error('Error exporting file');
+        }
     };
 
     return (

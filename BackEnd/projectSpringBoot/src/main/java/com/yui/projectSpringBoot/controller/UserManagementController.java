@@ -4,6 +4,7 @@ import com.yui.projectSpringBoot.dto.ReqRes;
 import com.yui.projectSpringBoot.entity.OurUsers;
 import com.yui.projectSpringBoot.helper.Helper;
 import com.yui.projectSpringBoot.service.UsersManagementService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:5173")
@@ -74,6 +77,27 @@ public class UserManagementController {
             }
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload an Excel file");
+    }
+
+    @GetMapping("/admin/export")
+    public void exportUsersToExcel(HttpServletResponse response) throws IOException {
+        ReqRes reqRes = usersManagementService.getAllUsers();
+        List<OurUsers> users = reqRes.getOurUsersList();
+        if (users != null && !users.isEmpty()) {
+            byte[] excelBytes = Helper.exportUsersToExcel(users);
+
+            response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+            response.setHeader("Content-Disposition", "attachment; filename=users.xlsx");
+            response.setContentLength(excelBytes.length);
+
+            try (var outputStream = response.getOutputStream()) {
+                outputStream.write(excelBytes);
+            }
+        } else {
+            response.setContentType("text/plain");
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            response.getWriter().write("No users found to export.");
+        }
     }
 
 }
