@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -104,6 +105,43 @@ public class Helper {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public static byte[] exportUsersToExcel(List<OurUsers> users) {
+        try (XSSFWorkbook workbook = new XSSFWorkbook();
+             ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+
+            XSSFSheet sheet = workbook.createSheet("Users");
+
+            // Tạo tiêu đề cột
+            Row header = sheet.createRow(0);
+            header.createCell(0).setCellValue("ID");
+            header.createCell(1).setCellValue("Name");
+            header.createCell(2).setCellValue("Email");
+            header.createCell(3).setCellValue("Password");
+            header.createCell(4).setCellValue("Address");
+            header.createCell(5).setCellValue("Role");
+
+            // Thêm dữ liệu người dùng
+            int rowNum = 1;
+            for (OurUsers user : users) {
+                Row row = sheet.createRow(rowNum++);
+
+                row.createCell(0).setCellValue(user.getId());
+                row.createCell(1).setCellValue(user.getName());
+                row.createCell(2).setCellValue(user.getEmail());
+                row.createCell(3).setCellValue(user.getPassword());
+                row.createCell(4).setCellValue(user.getAddress());
+                row.createCell(5).setCellValue(user.getRole());
+            }
+
+            workbook.write(outputStream);
+            return outputStream.toByteArray();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

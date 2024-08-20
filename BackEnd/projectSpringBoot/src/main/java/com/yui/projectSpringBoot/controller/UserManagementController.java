@@ -65,11 +65,15 @@ public class UserManagementController {
 
     @PostMapping("/admin/upload")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file) {
-        if(Helper.checkExcelFormat(file)){
-            this.usersManagementService.save(file);
-
-            return ResponseEntity.ok(Map.of("Message","File is uploaded and data is saved to db"));
+        if (Helper.checkExcelFormat(file)) {
+            try {
+                usersManagementService.save(file);
+                return ResponseEntity.ok(Map.of("Message", "File is uploaded and data is saved to db"));
+            } catch (Exception e) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to save data");
+            }
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload excel file");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload an Excel file");
     }
+
 }

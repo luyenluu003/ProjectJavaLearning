@@ -94,16 +94,16 @@ class UsersService {
     }
 
     static async importFileExcel(file, token) {
-        
-        try{
+        try {
             const response = await axios.post(`${UsersService.BASE_URL}/admin/upload`, file, {
                 headers: {
                     Authorization: `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data'
                 },
             });
             return response.data;
-        }catch(err){
-            throw err   
+        } catch (err) {
+            throw err;
         }
     }
 
