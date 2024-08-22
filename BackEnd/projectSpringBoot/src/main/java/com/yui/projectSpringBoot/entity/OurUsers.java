@@ -27,6 +27,9 @@ public class OurUsers implements UserDetails {
         return List.of(new SimpleGrantedAuthority(role));
     }
 
+
+    private boolean accountNonLocked = true;
+
     @Override
     public String getUsername() {
         return email;
@@ -39,7 +42,7 @@ public class OurUsers implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return accountNonLocked;
     }
 
     @Override

@@ -139,10 +139,10 @@
       <change beforePath="$PROJECT_DIR$/../../Basic assignment/src/bai4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Basic assignment/src/bai4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/controller/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/controller/UserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/entity/OurUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/entity/OurUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/helper/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/service/UsersManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectSpringBoot/src/main/java/com/yui/projectSpringBoot/service/UsersManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/components/modalExcel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/components/modalExcel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/service/usersService.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/service/usersService.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/pages/userManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/pages/userManagement.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +231,8 @@
       <workItem from="1724027371908" duration="442000" />
       <workItem from="1724049498107" duration="12894000" />
       <workItem from="1724118320517" duration="4782000" />
-      <workItem from="1724124093694" duration="3512000" />
+      <workItem from="1724124093694" duration="5609000" />
+      <workItem from="1724222248915" duration="14439000" />
     </task>
     <servers />
   </component>

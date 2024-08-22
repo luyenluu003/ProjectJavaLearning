@@ -6,6 +6,7 @@ import ModalDelete from "../components/modalDelete"
 import ModalEditAdd from "../components/modalEditAdd"
 import { FaRegFileExcel } from "react-icons/fa6";
 import ModalExcel from "../components/modalExcel"
+import { toast } from "react-toastify"
 
 const UserManagement = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -38,6 +39,31 @@ const UserManagement = () => {
     const refreshUserData = async () => {
         await fetchAllUser();
     };
+
+    const lockUser = async (userId) => {
+        try {
+            const token = localStorage.getItem('token')
+            const response = await UsersService.lockUser(userId, token)
+            toast.success("User locked successfully")
+            await refreshUserData();
+        } catch (error) {
+            toast.error("Error locking user")
+            console.log("error lock user", error)
+        }
+    }
+
+    const unLockUser = async (userId) => {
+        try {
+            const token = localStorage.getItem('token')
+            const response = await UsersService.unLockUser(userId, token)
+            toast.success("User unlocked successfully")
+            await refreshUserData();
+        } catch (error) {
+            toast.error("Error unlocking user")
+            console.log("error unlock user", error)
+        }
+    }
+
 
     useEffect(() => {
         fetchAllUser()
@@ -76,8 +102,18 @@ const UserManagement = () => {
                                             <td className="px-6 py-4">{user.address}</td>
                                             <td className="px-6 py-4 ">
                                                 <div className="flex items-center space-x-2 w-auto">
-                                                    <div className="w-[20px] h-[20px] rounded-full bg-[#A5F703] block" aria-hidden="true"></div>
-                                                    <span className="">Hoạt động</span>
+                                                    {!user.accountNonLocked == true ? (
+                                                        <>
+                                                            <div className="w-[20px] h-[20px] rounded-full bg-red block" aria-hidden="true"></div>
+                                                            <span className="">Khóa</span>
+                                                            {console.log("user.accountNonLocked ", user.accountNonLocked)}
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <div className="w-[20px] h-[20px] rounded-full bg-[#A5F703] block" aria-hidden="true"></div>
+                                                            <span className="">Hoạt động</span>
+                                                        </>
+                                                    )}
                                                 </div>
 
                                             </td>
@@ -106,12 +142,21 @@ const UserManagement = () => {
                                                 >
                                                     Delete
                                                 </button>
-                                                <button
-                                                    className="font-medium text-red-600 dark:text-red-500 btn-yellow"
-                                                // onClick={() => deleteUser(user.id)}
-                                                >
-                                                    Active
-                                                </button>
+                                                {!user.accountNonLocked ? (
+                                                    <button
+                                                        className="font-medium btn-yellow"
+                                                        onClick={() => unLockUser(user.id)}
+                                                    >
+                                                        Active
+                                                    </button>
+                                                ) : (
+                                                    <button
+                                                        className="font-medium btn-red"
+                                                        onClick={() => lockUser(user.id)}
+                                                    >
+                                                        Lock
+                                                    </button>
+                                                )}
                                             </td>
 
                                         </tr>
@@ -134,7 +179,7 @@ const UserManagement = () => {
             }}>
                 <MdAdd className="text-[32px] text-white" />
             </button>
-            <button className="w-16 h-16 flex items-center justify-center rounded-2xl bg-primary hover:bg-blue-800 absolute left-10 bottom-10" onClick={() => {
+            <button className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#A5F703] hover:bg-[#A5F703]/80 absolute left-10 bottom-10" onClick={() => {
                 setOpenExcelModal({
                     isShown: true,
                 })

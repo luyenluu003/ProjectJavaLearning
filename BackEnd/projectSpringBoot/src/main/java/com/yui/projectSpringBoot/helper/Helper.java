@@ -32,7 +32,7 @@ public class Helper {
         List<OurUsers> list = new ArrayList<>();
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(is);
-            XSSFSheet sheet = workbook.getSheetAt(0); // Lấy sheet đầu tiên không quan tâm tên sheet
+            XSSFSheet sheet = workbook.getSheetAt(0);
             int rowNumber = 0;
             Iterator<Row> iterator = sheet.iterator();
 
@@ -72,10 +72,8 @@ public class Helper {
                             break;
                         case 3:
                             if (cell.getCellType() == CellType.STRING) {
-                                // Mã hóa mật khẩu chuỗi
                                 user.setPassword(passwordEncoder.encode(cell.getStringCellValue()));
                             } else if (cell.getCellType() == CellType.NUMERIC) {
-                                // Mã hóa mật khẩu dạng số
                                 user.setPassword(passwordEncoder.encode(String.valueOf(cell.getNumericCellValue())));
                             }
                             break;
@@ -91,6 +89,21 @@ public class Helper {
                                 user.setRole(cell.getStringCellValue());
                             } else if (cell.getCellType() == CellType.NUMERIC) {
                                 user.setRole(String.valueOf(cell.getNumericCellValue()));
+                            }
+                            break;
+                        case 6:
+                            if (cell.getCellType() == CellType.STRING) {
+                                String cellValue = cell.getStringCellValue().trim().toLowerCase();
+                                if (cellValue.equals("true") || cellValue.equals("1")) {
+                                    user.setAccountNonLocked(true);
+                                } else if (cellValue.equals("false") || cellValue.equals("0")) {
+                                    user.setAccountNonLocked(false);
+                                } else {
+                                    throw new IllegalArgumentException("Invalid value for accountNonLocked: " + cellValue);
+                                }
+                            } else if (cell.getCellType() == CellType.NUMERIC) {
+                                boolean isLocked = cell.getNumericCellValue() != 0;
+                                user.setAccountNonLocked(!isLocked);
                             }
                             break;
                         default:
@@ -121,6 +134,7 @@ public class Helper {
             header.createCell(3).setCellValue("password");
             header.createCell(4).setCellValue("address");
             header.createCell(5).setCellValue("role");
+            header.createCell(5).setCellValue("account_non_locked");
 
             // Thêm dữ liệu người dùng
             int rowNum = 1;
@@ -133,6 +147,7 @@ public class Helper {
                 row.createCell(3).setCellValue(user.getPassword());
                 row.createCell(4).setCellValue(user.getAddress());
                 row.createCell(5).setCellValue(user.getRole());
+                row.createCell(6).setCellValue(user.isAccountNonLocked());
             }
 
             workbook.write(outputStream);

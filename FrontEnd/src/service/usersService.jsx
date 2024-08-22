@@ -121,6 +121,32 @@ class UsersService {
         }
     }
 
+    static async lockUser(userId,token){
+        try {
+            const response = await axios.post(`${UsersService.BASE_URL}/admin/lock/${userId}`, {},{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            return response.data;
+        } catch (err) {
+            throw err;
+        }
+    }
+
+    static async unLockUser(userId,token){
+        try{
+            const response = await axios.post(`${UsersService.BASE_URL}/admin/unlock/${userId}`,{}, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })  
+            return response.data
+        }catch(err){
+            throw err;
+        }
+    }
+
 
     static logout() {
         localStorage.removeItem('token')

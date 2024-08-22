@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -32,15 +33,30 @@ public class UsersManagementService {
 
     public void save(MultipartFile file) {
         try {
-            List<OurUsers> newUsers = Helper.convertExceltoListOfOurUsers(file.getInputStream(),passwordEncoder);
+            List<OurUsers> newUsers = Helper.convertExceltoListOfOurUsers(file.getInputStream(), passwordEncoder);
+
             List<OurUsers> existingUsers = usersRepo.findAll();
-            existingUsers.addAll(newUsers);
-            usersRepo.saveAll(existingUsers);
+
+            List<OurUsers> usersToSave = new ArrayList<>();
+
+            for (OurUsers newUser : newUsers) {
+                boolean exists = existingUsers.stream()
+                        .anyMatch(existingUser -> existingUser.getId() != null && existingUser.getId().equals(newUser.getId()));
+
+                if (!exists) {
+                    usersToSave.add(newUser);
+                }
+            }
+
+            if (!usersToSave.isEmpty()) {
+                usersRepo.saveAll(usersToSave);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public ReqRes register(ReqRes registrationRequest) {
         ReqRes resp = new ReqRes();
@@ -67,25 +83,42 @@ public class UsersManagementService {
 
     public ReqRes login(ReqRes loginRequest) {
         ReqRes resp = new ReqRes();
-        System.out.println("Login Request: " + loginRequest);
-        try{
-            authenticationManager
-                    .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
-            var user = usersRepo.findByEmail(loginRequest.getEmail()).orElseThrow();
+        try {
+            var userOptional = usersRepo.findByEmail(loginRequest.getEmail());
+
+            if (userOptional.isEmpty()) {
+                throw new RuntimeException("User Not Found");
+            }
+
+            var user = userOptional.get();
+
+            System.out.print("User isAccountNonLocked: " + user.isAccountNonLocked());
+            if (!user.isAccountNonLocked()) {
+
+                throw new RuntimeException("Account is locked");
+            }
+
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword())
+            );
+
             var jwt = jwtUtils.generateToken(user);
             var refreshToken = jwtUtils.generateRefreshToken(new HashMap<>(), user);
+
             resp.setStatusCode(200);
             resp.setToken(jwt);
             resp.setRole(user.getRole());
             resp.setRefreshToken(refreshToken);
             resp.setExpirationTime("24Hrs");
             resp.setMessage("Successfully logged in");
-        }catch (Exception e){
+
+        } catch (Exception e) {
             resp.setStatusCode(500);
             resp.setMessage(e.getMessage());
         }
         return resp;
     }
+
 
     public ReqRes refreshToken(ReqRes refreshToken) {
         ReqRes resp = new ReqRes();
@@ -211,5 +244,17 @@ public class UsersManagementService {
             reqRes.setMessage("Error occurred while getting user info:"+e.getMessage());
         }
         return reqRes;
+    }
+
+    public void lockUserAccount(Integer userId) {
+        OurUsers user = usersRepo.findById(userId).orElseThrow(() -> new RuntimeException("User Not Found"));
+        user.setAccountNonLocked(false);
+        usersRepo.save(user);
+    }
+
+    public void unlockUserAccount(Integer userId) {
+        OurUsers user = usersRepo.findById(userId).orElseThrow(() -> new RuntimeException("User Not Found"));
+        user.setAccountNonLocked(true);
+        usersRepo.save(user);
     }
 }

@@ -100,4 +100,17 @@ public class UserManagementController {
         }
     }
 
+
+    @PostMapping("/admin/lock/{userId}")
+    public ResponseEntity<?> lockUser(@PathVariable Integer userId) {
+        usersManagementService.lockUserAccount(userId);
+        return ResponseEntity.ok("User locked");
+    }
+
+    @PostMapping("/admin/unlock/{userId}")
+    public ResponseEntity<?> unlockUser(@PathVariable Integer userId) {
+        usersManagementService.unlockUserAccount(userId);
+        return ResponseEntity.ok("User unlocked");
+    }
+
 }
